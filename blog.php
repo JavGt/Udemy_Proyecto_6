@@ -1,38 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
-    <link rel="stylesheet" href="build/css/app.css">
-</head>
-<body>
-    <header class="header">
-        <div class="contenedor contenido-header ">
-            <div class="barra">
-                <a href="/">
-                    <img src="build/img/logo.svg" alt="Logotipo de Bienes Raices">
-                </a>
+<?php 
+    require 'includes/funciones.php';
+    incluirTemplates('header');
+?>
 
-                <div class="mobile-menu">
-                    <img src="build/img/barras.svg" alt="icono menu responsive">
-                </div>
-
-                <div class="derecha">
-                    <img src="build/img/dark-mode.svg" alt="" class="dark-mode-boton">
-                    <nav class="navegacion" >
-                        <a href="nosotros.html">Nosotros</a>
-                        <a href="anuncios.html">Anuncios</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="contacto.html">Contacto</a>
-                    </nav>
-                </div>
-
-            </div><!--.barra-->
-
-        </div>
-    </header>
     <main class="contenedor seccion contenido-centrado ">
         <h1>Nuestro Blog</h1>
         <article class="entrada-blog">
@@ -45,7 +15,7 @@
             </div>
 
             <div class="texto-entrada">
-                <a href="entrada.html">
+                <a href="entrada.php">
                     <h4>Terraza en el techo de tu casa</h4>
                     <p>Escrito el: <span>20 de Octubre del 2021</span> por <span>Admin</span> </p>
                     <p>Consejos para construir la Terraza en el techo de tu casa con los mejores materiales y ahorrando dinero.</p>
@@ -64,7 +34,7 @@
             </div>
 
             <div class="texto-entrada">
-                <a href="entrada.html">
+                <a href="entrada.php">
                     <h4>Guía para la decoración de tu hogar</h4>
                     <p>Escrito el: <span>20 de Octubre del 2021</span> por <span>Admin</span> </p>
                     <p>Maximiza el espacio en tu hogar con esta guia, aprende a combinar muebles y colores para darle una mejor vista a tu espacio.</p>
@@ -82,7 +52,7 @@
             </div>
 
             <div class="texto-entrada">
-                <a href="entrada.html">
+                <a href="entrada.php">
                     <h4>Guía para la decoración de tu hogar</h4>
                     <p>Escrito el: <span>20 de Octubre del 2021</span> por <span>Admin</span> </p>
                     <p>Maximiza el espacio en tu hogar con esta guia, aprende a combinar muebles y colores para darle una mejor vista a tu espacio.</p>
@@ -100,7 +70,7 @@
             </div>
 
             <div class="texto-entrada">
-                <a href="entrada.html">
+                <a href="entrada.php">
                     <h4>Guía para la decoración de tu hogar</h4>
                     <p>Escrito el: <span>20 de Octubre del 2021</span> por <span>Admin</span> </p>
                     <p>Maximiza el espacio en tu hogar con esta guia, aprende a combinar muebles y colores para darle una mejor vista a tu espacio.</p>
@@ -110,18 +80,4 @@
         </article><!--.entrada-blog-->
     </main>
 
-    <footer class="footer seccion">
-        <div class="contenedor contenido-footer">
-            <nav class="navegacion" >
-                <a href="nosotros.html">Nosotros</a>
-                <a href="anuncios.html">Anuncios</a>
-                <a href="blog.html">Blog</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-        <p class="copyright">Todos los derechos reservados 2021 &copy;</p>
-    </footer>
-
-    <script src="build/js/bundle.min.js"></script>
-</body>
-</html>
+<?php incluirTemplates('footer'); ?>
