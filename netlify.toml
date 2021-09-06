@@ -2,3 +2,4 @@
   from = "/*"
   to = "/index.php"
   status = 200
+  force = true
