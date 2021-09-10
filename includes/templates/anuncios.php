@@ -1,37 +1,24 @@
 <?php 
-    require 'includes/funciones.php';
-    incluirTemplates('header');
-
-    $id = $_GET['id'];
-    $id = filter_var($id, FILTER_VALIDATE_INT);
-    if (!$id) {
-        header('Location: /');
-    }
-
     // Importar la conexión
     require 'includes/config/database.php';
     $conexion = conectarDB();
 
     // Consultar 
-    $query = "SELECT * FROM propiedades WHERE id = ${id}";
+    $query = "SELECT * FROM propiedades LIMIT ${limite}";
 
     // Leer los resultados
     $resultado = mysqli_query($conexion, $query);
-
-    if (!$resultado->num_rows) {
-        header('Location: /');
-    }
-
-    $row = mysqli_fetch_assoc($resultado);
-
 ?>
-
-    <main class="contenedor seccion contenido-centrado">
-        <h1><?php echo $row['Titulo'];?></h1>
-
+<div class="contenedor-anuncios">
+    <?php while ( $row = mysqli_fetch_assoc($resultado) ) : ?>
+             
+    <div class="anuncio">
+            
         <img  loading="lazy" src="/imagenes/<?php echo $row['Imagen'];?>" alt="Anuncio ">
 
-        <div class="resumen-propiedad">
+        <div class="contenido-anuncio">
+            <h3><?php echo $row['Titulo'];?></h3>
+            <p><?php echo $row['Descripcion'];?></p>
             <p class="precio">$<?php echo $row['Precio'];?></p>
             <ul class="iconos-caracteristicas">
                 <li>
@@ -47,16 +34,17 @@
                     <p><?php echo $row['Habitaciones'];?></p>
                 </li>
             </ul>
-            <p><?php echo $row['Descripcion'];?></p>
-        
-        </div>
-    </main>
-    
-<?php 
 
+            <a class="boton-amarillo-block" href="anuncio.php?id=<?php echo $row['id'];?>">Ver Propiedad</a>
+
+        </div><!--.contenido-anuncio-->
+    </div><!--.anuncio-->
+
+    <?php endwhile; ?>
+
+</div><!--.contenedor-anuncios-->
+
+<?php 
     // Cerrar la conexión
     mysqli_close($conexion);
-
-    incluirTemplates('footer'); 
 ?>
-

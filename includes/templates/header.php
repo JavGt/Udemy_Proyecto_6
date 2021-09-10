@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienes Raices</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/build/img/favicon.webp" type="image/x-icon">
+
+    <!-- Css -->
     <link rel="stylesheet" href="/build/css/app.css">
+    <title>Bienes Raices</title>
 </head>
 <body>
     <header class="header <?php  echo $inicio ? 'inicio': '' ?>">
@@ -30,6 +35,9 @@
                 </div>
 
             </div><!--.barra-->
+
+            <?php echo $inicio ? "<h1>Venta de Casa y Departamentos Exclusivos de Lujo</h1>" : '';   ?>
+
 
         </div>
     </header>
