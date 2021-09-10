@@ -1,4 +1,11 @@
 <?php 
+    // Templates de header
+    require '../../includes/funciones.php';
+    $auth = verificarSesion();
+    
+    if (!$auth) {
+        header("Location: /");
+    }
 
     // Validar que sea un id valido
     $id = $_GET['id'];
@@ -143,7 +150,6 @@
     }
     
     // Templates de header
-    require '../../includes/funciones.php';
     incluirTemplates('header');
 ?>
 

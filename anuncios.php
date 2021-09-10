@@ -14,5 +14,4 @@
 
     </main>
 
-<?php incluirTemplates('footer'); ?>
-
+<?php incluirTemplates('footer'); ?> 
